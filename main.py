@@ -14,4 +14,3 @@ a.add_alphabet("c")
 
 a.affichage()
 
-"""Matthieu"""
