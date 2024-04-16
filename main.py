@@ -1,7 +1,7 @@
 from Automate import *
 
 
-auto7 = 'D7-6.txt'
+auto7 = 'F7-6.txt'
 
 
 a = Automate(auto7)
