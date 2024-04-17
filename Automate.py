@@ -136,3 +136,15 @@ class Automate:
 
     def add_alphabet(self, alphabet):
         self.alphabet.append(alphabet)
+
+    def created_tab(self, nb_etat, nb_alphabet):
+        tableau = [[-1] * nb_etat for _ in range(nb_etat)]
+        for i in range(len(self.automate)):
+            for j in range(len(self.automate[i])):
+                etat_depart = self.automate[i][j][0]
+                symbole = self.automate[i][j][1]
+                etat_arrivee = self.automate[i][j][2]
+                index_etat = self.etat.index(etat_arrivee)
+                index_symbole = self.alphabet.index(symbole)
+                tableau[index_etat][index_symbole] = etat_depart[index_etat][index_symbole] = etat_arrivee
+        return tableau
