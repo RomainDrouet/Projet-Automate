@@ -148,3 +148,19 @@ class Automate:
                 index_symbole = self.alphabet.index(symbole)
                 tableau[index_etat][index_symbole] = etat_depart[index_etat][index_symbole] = etat_arrivee
         return tableau
+
+    def complement_language(self):
+        #Création d'une nouvelle instance de l'automate pour stocler le complémentaire
+        complement = Automate()
+        #Copie des données de l'automate d'origine
+        complement.automate = self.automate #Copie des transition
+        complement.alphabet = self.alphabet #Copide de l'alphabet
+        complement.etat = self.etat # Copie des états
+        #Inversion des états terminaux et non terminaux
+        for i in range(len(self.etat)):
+            if self.sort[i]=="S": #test si l'état était terminal
+                complement.sort[i] == " " #le rendre non terminal dans le complémentaire
+            else:
+                complement.sort[i] = "S" #le rendre complémentaire si il ne l'était pas avant
+
+        return complement
